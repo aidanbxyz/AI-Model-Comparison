@@ -1,10 +1,16 @@
 # AI-Model-Comparison
 
-The raw output from each model is shown below the model name. llstudio.ai was used to generate each response. There was no system prompt. All formatting was done by the models themselves
+The raw output from each model is shown below the model name. llstudio.ai was used to generate each response. There was no system prompt. All formatting was done by the models themselves. The time taken to generate each response and tokens/s is show in parenthesis next to the model name. All tests were done with 100% GPU offload unless denoted by a (*), meaning 50% GPU 50% CPU.
+
+Machine Specs:
+
+i7-6700k, GTX 1060 6GB, GTX 1050Ti
+
+9.87GB total VRAM, 16GB total RAM
 
 ## Write a simple Python script that requests a webpage and returns the results.
 
-### TheBloke • codellama instruct 7B q4_k_s gguf
+### TheBloke • codellama instruct 7B q4_k_s gguf (4.64s 20.29tok/s)
 
 ```
 import requests
@@ -17,7 +23,7 @@ print(response.text)
 This script uses the `requests` library to make an HTTP GET request to the specified URL, and then prints the response text to the console. The `response.text` attribute contains the HTML content of the webpage, which can be parsed using various libraries or methods as needed.
 
 
-### TheBloke • wizardcoder python v1 0 13B q4_k_s gguf
+### TheBloke • wizardcoder python v1 0 13B q4_k_s gguf (8.33s 4.81tok/s)*
 
 """
 
@@ -30,7 +36,7 @@ response = urllib.request.urlopen(url)
 print(response.read()) 
 
 
-### TheBloke • mistral instruct v0 1 7B q4_k_s gguf
+### TheBloke • mistral instruct v0 1 7B q4_k_s gguf (4.95s 19.84tok/s)
 
  ```python
 import requests
@@ -46,7 +52,7 @@ for i in range(1, 6):
 ```
 
 
-### TheBloke • zephyr beta 7B q4_k_s gguf
+### TheBloke • zephyr beta 7B q4_k_s gguf (13.81s 19.47tok/s)
 
 Here's a simple Python script that uses the built-in `urllib.request` module to request a webpage and return its contents:
 
@@ -72,7 +78,7 @@ print(data.decode())
 This script first imports the `urllib.request` module, which provides functions for handling URLs and making HTTP requests. It then defines the URL of the webpage you want to request (in this case, "https://www.example.com"), and uses the `urlopen()` function to open the URL and read its contents as a byte stream. The script then decodes the byte stream into a string using the `decode()` method, prints it out, and finally closes the response object to free up system resources.
 
 
-### TheBloke • stablelm zephyr 3B q4_k_s gguf
+### TheBloke • stablelm zephyr 3B q4_k_s gguf (4.42s 43.81tok/s)
 
 Here is a simple Python script using the requests library to request a webpage:
 
@@ -101,7 +107,7 @@ pip install requests
 ```
 
 
-### TheBloke • openhermes 2 5 mistral 7B q4_k_s gguf
+### TheBloke • openhermes 2 5 mistral 7B q4_k_s gguf (3.48s 19.79tok/s)
 
 import requests
 
@@ -121,7 +127,7 @@ results = soup.find_all()
 print(results)
 
 
-### TheBloke • deepseek coder 6 instruct 7B q4_k_s gguf
+### TheBloke • deepseek coder 6 instruct 7B q4_k_s gguf (12.37s 20.55tok/s)
 
 Sure, here is an example of how you can do this using `requests` library in python:
 
@@ -145,7 +151,7 @@ Please note: you need to have `requests` library installed in your python enviro
 Also, please make sure that you are allowed to scrape the webpage as per its terms of service. Some websites explicitly forbid this kind of activity and may block your IP if you attempt to do so frequently. Always respect website owners' rights and policies.
 
 
-### TheBloke • nexusraven v2 13B q4_k_s gguf
+### TheBloke • nexusraven v2 13B q4_k_s gguf (32.99s 4.71tok/s)*
 
 The `requests` library is a powerful tool for making HTTP requests in Python. It allows you to easily send GET, POST, PUT, DELETE, etc. requests to web servers and parse the responses.
 
@@ -162,7 +168,7 @@ This code will send a GET request to the specified URL, and then print the respo
 You can also use other methods like `post`, `put`, `delete` etc. depending on your requirement.
 
 
-### phi-2.Q4_K_S.gguf
+### phi-2.Q4_K_S.gguf (0.59s 44.36tok/s)
 
  import requests
  
@@ -171,7 +177,7 @@ response = requests.get('https://www.example.com')
 print(response.text)
 
 
-### NousResearch • Hermes 2 Pro Mistral 7B q4_0 gguf
+### NousResearch • Hermes 2 Pro Mistral 7B q4_0 gguf (4.05s 23.78tok/s)
 
 import requests
 
@@ -194,7 +200,7 @@ else:
   print('Error:', response.status_code, 'while fetching the webpage.')
 
 
-### lmstudio-ai • gemma it 2B q8_0 gguf
+### lmstudio-ai • gemma it 2B q8_0 gguf (9.80s 35.84tok/s)
 
 ```python
 import requests
@@ -240,7 +246,7 @@ else:
 * You can use the `Beautiful Soup` library instead of directly parsing the HTML string.
 
 
-### Qwen • qwen chat q5 k m 7B 1_5 gguf
+### Qwen • qwen chat q5 k m 7B 1_5 gguf (15.57s 15.95tok/s)
 
 Sure, here's a simple Python script using the `requests` library to fetch the HTML content of a webpage and print it:
 
@@ -267,7 +273,7 @@ Make sure you have the `requests` library installed by running `pip install requ
 This script will send a GET request to the specified URL, and if the request is successful (status code 200), it will print the HTML content of the webpage. If there's an error, it will display a message indicating that the page failed to fetch.
 
 
-### bartowski • Starling LM beta I 7B q4_xs gguf
+### bartowski • Starling LM beta I 7B q4_xs gguf (21.17s 11.99tok/s)
 
  Certainly! Below is a simple Python script using the `requests` library to request a webpage and print its content:
 
@@ -298,7 +304,7 @@ pip install requests
 Replace `https://example.com` with the URL of the webpage you want to request. The script will print the content of the requested webpage if the request is successful, or an error message if the request fails.
 
 
-### bartowski • stable code instruct 3B q8_0 gguf
+### bartowski • stable code instruct 3B q8_0 gguf (10.15s 31.92tok/s)
 
 Here's a simple Python script using the `requests` library to fetch a webpage and return the results:
 
@@ -344,7 +350,7 @@ python webpage_fetcher.py
 The script will then ask you to enter the URL of the webpage you want to fetch. After entering the URL, the script will display the content of the fetched webpage.
 
 
-### TheBloke • mistral instruct v0 2 7B q4_k_s gguf
+### TheBloke • mistral instruct v0 2 7B q4_k_s gguf (15.48s 19.47tok/s)
 
  To write a simple Python script that requests a webpage and returns the results, you can use the `urllib` library which comes built-in with Python. Here's an example of how to do this:
 
